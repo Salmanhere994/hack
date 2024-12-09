@@ -15,7 +15,7 @@ const capacityFilters = [
   { id: "2person", label: "2 Person", count: 10 },
   { id: "4person", label: "4 Person", count: 14 },
   { id: "6person", label: "6 Person", count: 12 },
-  { id: "8ormore", label: "8 or More", count: 16 },
+  { id: "8ormore", label: "8 or More", count: 16 }, 
 ]
 
 export function SidebarFilters() {
@@ -29,12 +29,12 @@ export function SidebarFilters() {
             <div key={filter.id} className="flex items-center space-x-2">
               <Checkbox 
                 id={filter.id}
-                className="rounded-[4px] border-gray-300"
+                className="rounded-[4px] border-gray-300 "
                 checked={filter.id === "sport" || filter.id === "suv"}
               />
               <Label 
                 htmlFor={filter.id}
-                className="flex-1 text-sm font-normal cursor-pointer flex justify-between"
+                className="flex-1 text-sm font-normal cursor-pointer flex justify-between "
               >
                 {filter.label}
                 <span className="text-muted-foreground">({filter.count})</span>

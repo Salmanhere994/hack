@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function BookingForm() {
-  return (
+  return ( 
     <div className="flex gap-6 p-6 bg-white rounded-lg">
       <div className="flex-grow space-y-6">
         <section>

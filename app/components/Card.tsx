@@ -1,12 +1,11 @@
 // components/Card.tsx
 import { Fuel, Settings, Users } from "lucide-react";
-import img from "@/public/images/Car (2).png";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { carArray } from "./data";
 
 export default function Card() {
   return (
-    <section className="grid grid-cols-4 grid-rows-3 gap-3">
+    <section className="grid grid-cols-4 grid-rows-3 gap-3 w-full">
       {carArray.map((i, x) => {
         return (
           <div

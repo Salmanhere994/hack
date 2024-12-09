@@ -1,7 +1,5 @@
-import Image from "next/image";
 import Card from "./components/Card";
 import { HeroSection } from "./components/heroSection";
-import CarGrid from "./components/CarGrid.jsx";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {

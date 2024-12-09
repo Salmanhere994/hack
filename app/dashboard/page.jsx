@@ -1,10 +1,16 @@
-'use client'
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
-import { ChartContainer } from "@/components/ui/chart"
-import { MoreHorizontal } from 'lucide-react'
+import { Card } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { ChartContainer } from "@/components/ui/chart";
+import { MoreHorizontal } from "lucide-react";
 
 const rentalData = [
   { name: "Sport Car", value: 17439, color: "#0D3559" },
@@ -12,9 +18,19 @@ const rentalData = [
   { name: "Coupe", value: 18197, color: "#2E90FA" },
   { name: "Hatchback", value: 12510, color: "#53B1FD" },
   { name: "MPV", value: 14406, color: "#84CAFF" },
-]
+];
 
-export function Dashboard() {
+export default function Dashboard() {
+  const chartConfig = {
+    desktop: {
+      label: "Desktop",
+      color: "#2563eb",
+    },
+    mobile: {
+      label: "Mobile",
+      color: "#60a5fa",
+    },
+  };
   return (
     <div className="flex min-h-screen bg-[#F6F7F9]">
       {/* Sidebar */}
@@ -53,9 +69,11 @@ export function Dashboard() {
                   <h3 className="font-semibold">Nissan GT - R</h3>
                   <p className="text-sm text-muted-foreground">Sport Car</p>
                 </div>
-                <span className="ml-auto text-sm text-muted-foreground">#9761</span>
+                <span className="ml-auto text-sm text-muted-foreground">
+                  #9761
+                </span>
               </div>
-              
+
               {/* Pick-Up Section */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
@@ -126,8 +144,12 @@ export function Dashboard() {
 
               <div className="flex justify-between items-center pt-4">
                 <div>
-                  <p className="text-sm text-muted-foreground">Total Rental Price</p>
-                  <p className="text-xs text-muted-foreground">Overall price and includes rental discount</p>
+                  <p className="text-sm text-muted-foreground">
+                    Total Rental Price
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Overall price and includes rental discount
+                  </p>
                 </div>
                 <span className="text-xl font-semibold">$80.00</span>
               </div>
@@ -143,7 +165,10 @@ export function Dashboard() {
               </button>
             </div>
             <div className="flex gap-8">
-              <ChartContainer className="w-[240px] h-[240px]">
+              <ChartContainer
+                config={chartConfig}
+                className="w-[240px] h-[240px]"
+              >
                 <ResponsiveContainer>
                   <PieChart>
                     <Pie
@@ -168,12 +193,20 @@ export function Dashboard() {
               </ChartContainer>
               <div className="flex flex-col justify-center gap-3">
                 {rentalData.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between gap-8">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between gap-8"
+                  >
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
+                      <div
+                        className="w-2 h-2 rounded-full"
+                        style={{ backgroundColor: item.color }}
+                      />
                       <span className="text-sm">{item.name}</span>
                     </div>
-                    <span className="text-sm font-medium">{item.value.toLocaleString()}</span>
+                    <span className="text-sm font-medium">
+                      {item.value.toLocaleString()}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -182,7 +215,7 @@ export function Dashboard() {
         </div>
 
         {/* Recent Transactions */}
-        <Card className="p-6">
+        <Card className="p-6"> 
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold">Recent Transaction</h2>
             <button className="text-sm text-blue-600">View All</button>
@@ -213,6 +246,5 @@ export function Dashboard() {
         </Card>
       </main>
     </div>
-  )
+  );
 }
-

@@ -24,7 +24,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                <Link href="/dasboard" className="text-sm text-gray-500 hover:text-black hover:underline underline-offset-2">
+                  <Link href="/" className="text-sm text-gray-500 hover:text-black hover:underline underline-offset-2">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                <Link href="/dashboard" className="text-sm text-gray-500 hover:text-black hover:underline underline-offset-2">
                     Dashboard
                   </Link>
                 </li>

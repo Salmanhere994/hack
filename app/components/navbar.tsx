@@ -1,17 +1,18 @@
 import { Bell, Heart, Search, Settings } from 'lucide-react'
 import { Input } from "@/components/ui/input"
-
+import Link from 'next/link'
+ 
 export function Navbar() {
   return (
     <nav className="w-full px-16 py-4 flex items-center justify-between bg-white">
       <div className="flex items-center gap-16">
-        <a href="/" className="text-[#3563E9] text-2xl font-bold">
+        <Link href="/" className="text-[#3563E9] text-2xl font-bold">
           MORENT
-        </a>
+        </Link>
         <div className="relative w-[492px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            type="search"
+            type="search" 
             placeholder="Search something here"
             className="pl-9 bg-background border-none shadow-none ring-1 ring-input"
           />
